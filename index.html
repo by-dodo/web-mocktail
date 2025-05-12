@@ -2,17 +2,106 @@
 <html>
   <head>
     <title>Mocktail World</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="header">
-      <p class="text">
-        Ahoj
-      </p>
-    </div>
-    <p class="text">
-    </p>
-    <ol>
-    </ol>
+    <p id="greeting">Hello, World.</p>
+    <button onclick="test()">Label</button>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Rb</th>
+          <th>Ime</th>
+          <th>Cijena</th>
+          <th>Ocjena</th>
+          <th>Opcije</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
   </body>
+
+  <script>
+    mocktails = [
+      {
+        name: "Ljetni osvjezivac",
+        desc: "Mjesavina limete, mente i gazirane vode.",
+        price: 3.5,
+        rating: 7.8,
+      },
+      {
+        name: "Grozdjani bliss",
+        desc: "Sok od crnog grozdja, menta i limun.",
+        price: 4.0,
+        rating: 6.3,
+      },
+      {
+        name: "Narandzin snop",
+        desc: "Svjezi sok od narandze, malo meda i menta.",
+        price: 3.7,
+        rating: 8.2,
+      },
+      {
+        name: "Tropski raj",
+        desc: "Kokosovo mlijeko, ananas i banana bez alkohola.",
+        price: 7.5,
+        rating: 3.7,
+      },
+      {
+        name: "Ledeni caj",
+        desc: "Fuzetea breskva, crni caj i hibiskus.",
+        price: 3.6,
+        rating: 9.6,
+      },
+      {
+        name: "Ruzina magla",
+        desc: "Sirup od ruze, limunada i svjeze latice.",
+        price: 12.0,
+        rating: 3.4,
+      },
+      {
+        name: "Borovnicki uzitak",
+        desc: "Borovnice, lavanda i limun u gaziranoj vodi.",
+        price: 5.3,
+        rating: 1.1,
+      },
+    ];
+    for (let i = 0; i < mocktails.length; i++) {
+      tableBodyElement = document.getElementById("tbody");
+      newTrElement = document.createElement("tr");
+
+      newTdNumberElement = document.createElement("td");
+      newTdNumberElement.innerHTML = i + 1 + ".";
+      newTrElement.appendChild(newTdNumberElement);
+
+      newTdNameElement = document.createElement("td");
+      newTdNameElement.innerHTML = mocktails[i].name;
+      newTrElement.appendChild(newTdNameElement);
+
+      newTdPriceElement = document.createElement("td");
+      newTdPriceElement.innerHTML = mocktails[i].price;
+      newTrElement.appendChild(newTdPriceElement);
+
+      newTdRateElement = document.createElement("td");
+      newTdRateElement.innerHTML = mocktails[i].rating;
+      newTrElement.appendChild(newTdRateElement);
+
+      newTdDeleteElement = document.createElement("td");
+
+      newDeleteButtonElement = document.createElement("button");
+      newDeleteButtonElement.innerHTML = "Delete";
+      newDeleteButtonElement.onclick = function () {
+        newTrElement.remove();
+      };
+      newTdDeleteElement.appendChild(newDeleteButtonElement);
+
+      newTrElement.appendChild(newTdDeleteElement);
+
+      tableBodyElement.appendChild(newTrElement);
+    }
+
+    function test() {
+      console.log("loll");
+    }
+  </script>
 </html>

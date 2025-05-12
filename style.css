@@ -1,3 +1,25 @@
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  color:white
+}
+
+td,th {
+  border: 2px solid rgb(0, 0, 0);
+}
+
+tr {
+  background-color: rgb(220, 13, 137);
+}
+
+tr:nth-child(even),th {
+  background-color: rgb(170, 19, 120);
+}
+
+td:hover {
+  background-color: rgb(175, 4, 81);
+}
 
 .text{
   font-family: Arial, Helvetica, sans-serif;
