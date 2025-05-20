@@ -2,23 +2,23 @@ table {
   width: 100%;
   text-align: center;
   border-collapse: collapse;
-  color:white
+  color:rgb(0, 0, 0)
 }
 
 td,th {
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid rgb(255, 68, 99);
 }
 
 tr {
-  background-color: rgb(220, 13, 137);
+  background-color: rgb(255, 219, 229);
 }
 
 tr:nth-child(even),th {
-  background-color: rgb(170, 19, 120);
+  background-color: rgb(255, 187, 204);
 }
 
 td:hover {
-  background-color: rgb(175, 4, 81);
+  background-color: rgb(255, 125, 147);
 }
 
 .text{
@@ -27,7 +27,6 @@ td:hover {
   font-weight: bold;
   font-style: italic;
   text-align: center;
-  width: 100px;
 }
 
 .header{
@@ -35,6 +34,31 @@ td:hover {
   top: 0px;
   right: 0px;
   left: 0px;
-  height: 70px;
+  height: 80px;
+  background-color: rgb(255, 125, 147);
+  text-align:center;
+}
+.title,
+.author {
+margin-top: 0px;
+color: black;
+font-weight: bold;
+font-size: 35px;
+margin-bottom: 0px;
+padding-bottom: 0px;
+}
+.author {
+color: rgb(255, 43, 78);
+font-size: 15px;
+}
+
+.body {
+  margin-top: 90px;
+  height: 2000px;
   background-color: pink;
+}
+
+.information {
+  display:block;
+  padding-top: 10px;
 }

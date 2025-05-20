@@ -4,103 +4,27 @@
     <title>Mocktail World</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <p id="greeting">Hello, World.</p>
-    <button onclick="test()">Label</button>
-    <table id="table">
-      <thead>
-        <tr>
-          <th>Rb</th>
-          <th>Ime</th>
-          <th>Cijena</th>
-          <th>Ocjena</th>
-          <th>Opcije</th>
-        </tr>
-      </thead>
-      <tbody id="tbody"></tbody>
-    </table>
+  <body class="body">
+    <header class="header">
+      <p class="title">Mocktail craft</p>
+      <p class="author">Created by-dodo ;3</p>
+    </header>
+    <div class="information">
+      <h2 style="text-align: center; color: crimson">Welcome to my page!</h2>
+      <p class="text">
+        So I started this as a random project to work on my html
+        <br />
+        As one can see, I soon realized that my 'html skill' is non-existent lol
+      </p>
+    </div>
+    <div>
+      <button onclick="tableMaker()">Print a mocktail table</button>
+      <table id="table">
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <button onclick="add ()">Add</button>
+    </div>
   </body>
-
-  <script>
-    const mocktails = [
-      {
-        name: "Ljetni osvjezivac",
-        desc: "Mjesavina limete, mente i gazirane vode.",
-        price: 3.5,
-        rating: 7.8,
-      },
-      {
-        name: "Grozdjani bliss",
-        desc: "Sok od crnog grozdja, menta i limun.",
-        price: 4.0,
-        rating: 6.3,
-      },
-      {
-        name: "Narandzin snop",
-        desc: "Svjezi sok od narandze, malo meda i menta.",
-        price: 3.7,
-        rating: 8.2,
-      },
-      {
-        name: "Tropski raj",
-        desc: "Kokosovo mlijeko, ananas i banana bez alkohola.",
-        price: 7.5,
-        rating: 3.7,
-      },
-      {
-        name: "Ledeni caj",
-        desc: "Fuzetea breskva, crni caj i hibiskus.",
-        price: 3.6,
-        rating: 9.6,
-      },
-      {
-        name: "Ruzina magla",
-        desc: "Sirup od ruze, limunada i svjeze latice.",
-        price: 12.0,
-        rating: 3.4,
-      },
-      {
-        name: "Borovnicki uzitak",
-        desc: "Borovnice, lavanda i limun u gaziranoj vodi.",
-        price: 5.3,
-        rating: 1.1,
-      },
-    ];
-    for (let i = 0; i < mocktails.length; i++) {
-      const tableBodyElement = document.getElementById("tbody");
-      const newTrElement = document.createElement("tr");
-      const newTdNumberElement = document.createElement("td");
-      newTdNumberElement.innerHTML = i + 1 + ".";
-      newTrElement.appendChild(newTdNumberElement);
-
-      const newTdNameElement = document.createElement("td");
-      newTdNameElement.innerHTML = mocktails[i].name;
-      newTrElement.appendChild(newTdNameElement);
-
-      const newTdPriceElement = document.createElement("td");
-      newTdPriceElement.innerHTML = mocktails[i].price;
-      newTrElement.appendChild(newTdPriceElement);
-
-      const newTdRateElement = document.createElement("td");
-      newTdRateElement.innerHTML = mocktails[i].rating;
-      newTrElement.appendChild(newTdRateElement);
-
-      const newTdDeleteElement = document.createElement("td");
-
-      const newDeleteButtonElement = document.createElement("button");
-      newDeleteButtonElement.innerHTML = "Delete";
-      newDeleteButtonElement.onclick = function () {
-        newTrElement.remove();
-      };
-      newTdDeleteElement.appendChild(newDeleteButtonElement);
-
-      newTrElement.appendChild(newTdDeleteElement);
-
-      tableBodyElement.appendChild(newTrElement);
-    }
-
-    function test() {
-      console.log("loll");
-    }
-  </script>
+  <script src="logic.js"></script>
 </html>
